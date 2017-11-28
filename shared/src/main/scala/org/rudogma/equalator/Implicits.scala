@@ -62,10 +62,14 @@ object Implicits {
 
     override protected def deepEqualsImpl(a: T, b: T)(implicit path: Path) = {
 
-      nested.value.deepEquals(
-        generic.to(a),
-        generic.to(b)
-      )
+      if(a == null && b == null){
+        Right(Equalator.True)
+      }else{
+        nested.value.deepEquals(
+          generic.to(a),
+          generic.to(b)
+        )
+      }
     }
   }
 }

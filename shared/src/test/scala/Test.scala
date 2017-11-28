@@ -23,6 +23,17 @@ class Test extends FlatSpec with Matchers {
       case Left(e) => e.message shouldBe "Left != Right, at $root.field1.field2.[1]"
       case Right(x) => ???
     }
+
+    val v5 = T2(5, null)
+    val v6 = T2(5, null)
+
+    Equalator[T2].deepEquals(v5, v6) match {
+      case Left(e) =>
+        println(e.message)
+        e.printStackTrace()
+        ???
+      case Right(x) => //pass
+    }
   }
 
 

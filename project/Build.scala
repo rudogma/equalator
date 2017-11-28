@@ -4,7 +4,7 @@ import sbt._
 
 
 object Versions {
-  val Equalator = "1.1"
+  val Equalator = "1.2"
   val Scala = "2.12.2"
   val ScalaCross = Seq("2.12.2", "2.11.11")
 
